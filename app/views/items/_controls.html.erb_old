@@ -1,0 +1,25 @@
+
+<div id="controls" >
+<div id="rate">
+ <h3><center> <%= t('controls.rate')-%><center></h3>
+
+   <button name="button_rate" class="button_rate" disabled type="button"  onclick="ChangeRate(1.8)"><b><%= t('controls.very_fast')-%></b></button>&nbsp
+   <button name="button_rate" class="button_rate" disabled type="button"  onclick="ChangeRate(1.4)"><b><%= t('controls.fast')-%></b></button>&nbsp    
+   <button name="button_rate" style="border='solid'" type="button" onclick="ChangeRate(1.0)"><b><%= t('controls.normal')-%></b></button>&nbsp
+ 
+ </div>
+
+
+<%= link_to t('examinations.end_inst')  ,examinations_url, :id=>"link_to_exams" if examination.practice_exam?%>
+
+
+<div id="zoom">
+ <h3><center> <%= t('controls.zoom')-%></center> </h3>
+   <button name="button_zoom" class="button_zoom" type="button" onclick="ChangeZoom('300%',this)"><b>300%</b></button>&nbsp    
+   <button name="button_zoom" class="button_zoom" type="button" onclick="ChangeZoom('200%',this)"><b>200%</b></button>&nbsp
+   <button name="button_zoom" style="border='solid'" type="button" onclick="ChangeZoom('100%',this)"><b>100%</b></button>&nbsp
+  
+ </div>
+</div>
+
+

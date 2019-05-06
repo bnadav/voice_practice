@@ -1,0 +1,17 @@
+<center>
+<h1><center><%= t('examinations.title') -%></h1>
+<table height=500 dir=rtl align=center>
+<% for examination in @examinations %>
+  <tr>
+    <td class='main'> 
+    <% if examination.number ==0 %>
+          <%=link_to t('examinations.back_to_tirgul'),examination_url(examination) %>
+     <%else%>
+           <%=link_to t('examinations.start'),examination_url(examination) %>
+     <%end%>
+    </td>
+
+  </tr>
+<% end %>
+</table>
+</center>

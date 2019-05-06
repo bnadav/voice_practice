@@ -1,0 +1,26 @@
+<body dir=rtl>
+<center><h2>פרק מספר 10 הבנת הנקרא</h1>
+<table dir=rtl WIDTH=100%>
+  <tr>
+<% for chapter in @chapters %>
+<td><%= link_to "Chapter no " + chapter.number.to_s, {:action=>:index, :chapter_id=>chapter} %></td>
+<% end %>
+  </tr>
+<% for item in @items %>
+<tr><td BGCOLOR=#DEDEDE colspan=9 align=center><h3>שאלה מספר: <%=chapter.number%></td></tr>
+<tr bgcolor=#ceface>
+    
+	<td>chapter</td>
+	<td><%= link_to chapter.name, {:acition=>:show, :id=>chapter} %></td>
+    <!--td><%= link_to 'Show', chapter %></td>
+    <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
+    <td><%= link_to 'Destroy', chapter, :confirm => 'Are you sure?', :method => :delete %></td-->
+
+</tr>
+<% end %>
+</table>
+<br>
+<%= link_to 'New item', new_item_path %>
+
+
+

@@ -1,0 +1,65 @@
+<div dir=rtl >
+ <h1>עדכון פריט</h1>
+
+<script>
+  function init(){
+     <% if @item.select_type <=0 %> 
+	 document.getElementById("item_number").style.visibility="hidden";
+     <%end%>
+     <% if @item.select_type !=-1 %> 
+	 document.getElementById("item_text").style.visibility="hidden";
+     <%end%>
+  }
+</script>
+
+<%= form_tag(chapter_item_url , :method=> "put" ) do -%>
+ 
+  <% if @item.errors.any? %>
+  <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+<table dir=rtl border=1%>
+<th>שם קובץ להשמעה</th><th>שם הפרק</th><th>סוג פריט</th><th>מספר סידורי - רק לשאלות</th><th>מיקום בפרק</th><th>משתתף רק בבחינה(לא חובה)</th><th>סוג הוראות-רק להוראות</th>
+<tr>
+  
+  <td dir=ltr>  <%=text_field(:item,:name,:size=>10) %></td>
+  
+  <td ><%= @item.chapter.name %></td>
+ 
+  <td>
+  <%= select("item","select_type",[["הוראות",-1],["קטע קריאה",0],["שאלה",1],["מטלת חיבור",-2]],{ :include_blank => false} ,
+                                                                                  { :onchange => "getType()" }) %>
+   </td>
+       
+    
+    <td>
+      <input id="item_number" name="item[number]" size="3" type="text" value=<%=@item.number%>   />
+    </td>
+
+   
+  <td><%=text_field(:item,:ind,:size=>3) %></td>
+
+  <td><%= select("item", "examination_id", Examination.find(:all).collect {|e| [ e.name,e.id ] }.uniq,
+                                                                    { :include_blank => true }) %></td>
+
+   <td><%=text_field(:item,:text,:size=>30) %></td>
+ 
+ </tr>
+
+ 
+
+</table>
+  <p>
+      <%= submit_tag 'עדכן'  %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Back', list_chapter_items_path(@item.chapter) %>
+</div>

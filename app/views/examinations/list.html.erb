@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Chapters: <%= controller.action_name %></title>
+  <%= javascript_include_tag  "jquery.min", "jquery_ujs" %>
+  <%= csrf_meta_tag %>
+  <style>
+    body {
+      background-color: #cec9d0;
+	}
+  </style>
+</head>
+<body dir=rtl>
+<p style="color: green "><%= flash[:notice] %></p>
+<div dir=rtl>
+<h1>נא לבחור את הבחינה</h1>
+<table  dir=rtl border=1 >
+<% for examination in @examinations %>
+  <tr>
+    <td><%= examination.name %></td>
+    <td><%= link_to 'לערוך', edit_examination_path(examination) %></td>
+    <td><%= link_to 'למחוק', examination,data: { confirm: 'Are you sure?' }, :method => :delete %></td>
+
+  
+  </tr>
+<% end %>
+</table>
+</br></br>
+<%= link_to 'מבחן חדש', new_examination_path %>
+
+</br></br>
+<hr>
+
+
+<a href="/chapters/list">רשימת הפרקים המוגדרים במערכת</a></br> </br>
+<a href="/chapters_examinations">רשימת פרקים המשולבים בבחינות המוגדרים במערכת</a></br> </br>
+</div>
+</body>
+</html>

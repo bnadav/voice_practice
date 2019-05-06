@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html id="chapters">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Chapters: <%= controller.action_name %></title>
+  <%= javascript_include_tag "application", "jquery.min", "jquery_ujs", "voice" %>
+  <%= stylesheet_link_tag 'voice' %>
+  <%= csrf_meta_tag %>
+</head>
+<body dir = center>
+
+<p style="color: green "><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+</body>
+</html>

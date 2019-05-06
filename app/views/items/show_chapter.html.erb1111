@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<%= javascript_include_tag 'voice' %>
+<%= stylesheet_link_tag 'voice' %>
+</HEAD>
+
+<BODY>
+
+   <%= render :partial => 'controls', :locals => {:examination => @examination} %>  
+  
+
+</BODY>
+</HTML>

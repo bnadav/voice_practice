@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Examinations: <%= controller.action_name %></title>
+
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag 'voice' %>
+  <%= csrf_meta_tag %>
+
+</head>
+<body dir=rtl >
+ <audio  ID="Player" width="100" height="100" onended="Stop();" >
+
+</audio> 
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+</body >
+</html>

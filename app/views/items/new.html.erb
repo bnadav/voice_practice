@@ -1,0 +1,85 @@
+
+<div dir=rtl>
+
+<script>
+  var inst_name= '<%=@item.suggest_name(@item.chapter,-1)%>'
+  var kernel_name='<%=@item.suggest_name(@item.chapter,0)%>'
+  var quest_name= '<%=@item.suggest_name(@item.chapter,1)%>'
+  var essay_name= '<%=@item.suggest_name(@item.chapter,-2)%>'
+  function init(){
+   
+          document.getElementById("item_text").style.visibility="hidden";
+     
+     <%if @item.select_type <=0 %> 
+	 document.getElementById("item_number").style.visibility="hidden";
+     <%else%>
+         document.getElementById("item_number").value='<%=@item.quest_number(@item.chapter)%>';
+	 
+     <%end%>
+
+
+      document.getElementById("name").value = quest_name;
+    
+  }
+</script>
+
+<h1>הגדרת פריט חדש</h1>
+
+ 
+ <%= form_tag(chapter_items_url , :method=> "post" ) do -%>
+ 
+ <% if @item.errors.any? %>
+  <ul>
+    <% @item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+  <p>
+    מספר פרק<br />
+    <%= @item.chapter.number %>
+  </p>
+
+   <p>
+   סוג הפריט<br />
+    <%= select("item","select_type",[["הוראות",-1],["קטע קריאה",0],["שאלה",1],["מטלת כתיבה",-2]],{ :include_blank => false} ,
+                                                                             { :onchange => "suggestName(inst_name,kernel_name,quest_name,essay_name)" }) %>
+  
+   </p>
+    <p>
+     סוג הוראות-רק להוראות</br>
+      <%=text_field(:item,:text,:size=>30) %>
+    </p>
+   <p>
+     מספר סידורי - רק לשאלות</br>
+      <%=text_field(:item,:number,:size=>3) %>
+    </p>
+   <p>
+    אינדקס של הפריט-המקום הסידורי של הפריט בפרק </br>
+     <input id="ind" name="ind" size="3" type="text" value=<%= @item.ind%> /> 
+   </p>
+   
+   <p>
+    שם פריט<br />
+    <input dir ='ltr' id="name" name="name" size="10" type="text" value="" />
+ 
+   </p>
+  <p>
+   משתתף רק בבחנה (לא חובה)<br />
+   <%= select("item", "examination_id", Examination.find(:all).collect {|e| [ e.name ,e.id] }.uniq ,
+                               { :include_blank => true }) %>
+   </p>
+
+  <p>
+    <%= submit_tag 'לשמור'  %>
+  </p>
+<% end %>
+
+
+
+
+
+<%= link_to 'Back', list_chapter_items_path(@item.chapter) %>
+</div>

@@ -1,0 +1,33 @@
+<center>
+
+<% if @examination.number != 0 %>
+   <h2><%=t('examinations.listen_inst2') %></h2>
+<% else %>
+   <h2><%=t('examinations.listen_inst') %></h2>
+<% end %>
+
+<table>
+<tr>
+   <%= player_for_3("general","9", @examination.instruction,t('examinations.inst_gen'),'yellow') if @examination.instruction %>
+</tr>
+</table>
+
+<hr>
+
+<% if !@chapter %>
+  <h2><%=t('items.start') %>  <%= link_to @examination.name , show_chapter_chapter_items_url(@chapters[0], :examination_id => @examination.id) %> 
+  </h2>    
+  <% if @examination.number != 0 %>
+        <h2><%=t('examinations.start_time') %></h2>
+   <% end %>
+
+<% else %>
+
+   <h2> <%=t('items.chapter') %>  <%=@chapter.ind%> ( <%=@chapter.name%> ) </h2>
+<% end %>
+
+
+
+<br>
+
+</center>

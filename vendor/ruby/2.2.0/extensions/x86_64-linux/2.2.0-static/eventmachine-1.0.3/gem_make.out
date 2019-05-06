@@ -1,0 +1,35 @@
+/home/nadav/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20190506-5839-17u65ok.rb extconf.rb
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for inotify_init() in sys/inotify.h... yes
+checking for writev() in sys/uio.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for sys/event.h... no
+checking for epoll_create() in sys/epoll.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling binder.cpp
+compiling kb.cpp
+compiling pipe.cpp
+compiling em.cpp
+em.cpp: In member function ‘void EventMachine_t::_RunEpollOnce()’:
+em.cpp:574:37: error: ‘rb_thread_select’ was not declared in this scope
+   EmSelect (0, NULL, NULL, NULL, &tv);
+                                     ^
+em.cpp: In member function ‘int SelectData_t::_Select()’:
+em.cpp:827:67: error: ‘rb_thread_select’ was not declared in this scope
+  return EmSelect (maxsocket+1, &fdreads, &fdwrites, &fderrors, &tv);
+                                                                   ^
+em.cpp: In member function ‘void EventMachine_t::_RunSelectOnce()’:
+em.cpp:946:40: error: ‘rb_thread_select’ was not declared in this scope
+      EmSelect (0, NULL, NULL, NULL, &tv);
+                                        ^
+Makefile:229: recipe for target 'em.o' failed
+make: *** [em.o] Error 1
+
+make failed, exit code 2

@@ -1,0 +1,8 @@
+<ASX  Version="3.0">
+ <% (0..4).each do |current_number| %>
+ <entry>
+     <Ref href="../<%=@filename%>.<%=current_number%>.ogg"/>
+ </entry>
+ 
+ <% end %>
+</asx> 

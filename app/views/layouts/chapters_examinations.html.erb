@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Items: <%= controller.action_name %></title>
+ <%= javascript_include_tag "application", "jquery.min", "jquery_ujs", "voice" %>
+  <%= stylesheet_link_tag 'voice' %>  
+  <%= csrf_meta_tag %>
+
+</head>
+<body dir=rtl >
+ 
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+</body>
+</html>

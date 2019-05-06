@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+  <title>Items: <%= controller.action_name %></title>
+
+  <%= javascript_include_tag "application", "jquery.min", "jquery_ujs", "voice" %>
+  <%= stylesheet_link_tag 'voice' %>
+  <%= csrf_meta_tag %>
+</head>
+<body onload="init()" id="body"  dir=rtl>
+<audio  id="Player" width="100" height="100" onended="Ended()"; >
+
+</audio> 
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<% if @examination %>
+
+<div id="controls" >
+<%= link_to t('examinations.end_inst').html_safe  ,examinations_url, :class=>"link_to_exams" if(@examination.practice_exam?)%>
+<div id="rate">
+ <h3> <%= t('controls.rate')-%></h3>
+
+   <button name="button_rate" class="button_rate" disabled type="button"  onclick="ChangeRate(2)"><b><%= t('controls.very_fast')-%></b></button>&nbsp
+   <button name="button_rate" class="button_rate" disabled type="button"  onclick="ChangeRate(1.5)"><b><%= t('controls.fast')-%></b></button>&nbsp
+   <button name="button_rate" style="border='solid'" type="button" onclick="ChangeRate(1.0)"><b><%= t('controls.normal')-%></b></button>&nbsp
+
+ </div>
+
+
+
+
+
+<div id="zoom">
+ <h3> <%= t('controls.zoom')-%> </h3>
+   <button name="button_zoom" class="button_zoom" type="button" onclick="ChangeZoom(2.5,this)"><b>300%</b></button>&nbsp
+   <button name="button_zoom" class="button_zoom" type="button" onclick="ChangeZoom(1.5,this)"><b>200%</b></button>&nbsp
+   <button name="button_zoom" style="border='solid'" type="button" onclick="ChangeZoom(1,this)"><b>100%</b></button>&nbsp
+
+ </div>
+</div>
+
+<% end %>
+
+<%= yield  %>
+
+</body>
+</html>

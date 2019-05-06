@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Chapters: <%= controller.action_name %></title>
+  <%= javascript_include_tag  "jquery.min", "jquery_ujs" %>
+  <%= csrf_meta_tag %>
+  <style>
+    body {
+      background-color: #cec9d0;
+	}
+  </style>
+</head>
+<body>
+<p style="color: green "><%= flash[:notice] %></p>
+<div dir=rtl  id="chapter_list">
+<h2>רשימת הפרקים המוגדרים במערכת</h2></br>
+
+<table dir=rtl border=1>
+
+<tr><th>מספר פרק</th><th>שם פרק</th><th>שפת פרק</th> </tr>
+
+<% @chapter.each do |chapter| %>
+<tr>
+  <td><%=chapter.number%></td>
+  <td><%=chapter.name%></td>
+  <td><%=chapter.lang%></td>
+  <td><%= link_to 'לערוך', edit_chapter_path(chapter) %></td>
+  <td><%= raw link_to 'למחוק', chapter, data: { confirm: "Are you sure?" }, :method => :delete %></td>
+  <td><%= link_to 'רשימת פריטים', list_chapter_items_path(chapter) %></td>
+  
+ 
+ </tr>
+<% end %>
+ 
+
+</table>
+<br>
+
+<%= link_to 'פרק חדש', new_chapter_path %>
+
+
+</br></br>
+<hr>
+
+
+<a href="/examinations/list">רשימת בחינות המוגדרות במערכת</a> </br> </br>
+<a href="/chapters_examinations">רשימת פרקים המשולבים בבחינות המוגדרים במערכת</a></br> </br>
+
+</div>
+
+</body>
+</html>

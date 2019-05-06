@@ -1,0 +1,48 @@
+<div>
+<h2> <%=@examination.name.html_safe%></h2>
+
+
+<% if !@chapter %>
+<h2><%= t('items.title') -%></h2>
+<% else %>
+      
+
+ <% if @examination.chapters.first.name == 'essay' %> 
+	   <table width=450 dir=rtl >
+   <tr>
+    <% @examination.chapters.each_with_index do|chapter,index|%>
+  <td> <B>  
+      <% if index == 0 %>
+           <%= link_to t('items.essay'),chapter_items_url(chapter, :examination_id => @examination.id)  -%></B> </td>
+	  <% else %>
+    
+  <%= link_to t('items.chapter')  +"  " +(index).to_s,chapter_items_url(chapter, :examination_id => @examination.id)  -%></B> </td>
+     <% end %>
+<% end %>
+    <% else %>
+
+  <table width=450 dir=rtl >
+  <tr>
+  <% @examination.chapters.each_with_index do|chapter,index|%>
+  <td> <B>  
+   
+    
+  <%= link_to t('items.chapter')  +"  " +(index+1).to_s,chapter_items_url(chapter, :examination_id => @examination.id)  -%></B> </td>
+     
+<% end %>
+<% end %>
+</tr>
+</table>
+
+
+ <% if @chapter.name == 'essay' %> 
+     <p id="chapter_name_title"> <%= t('items.essay') -%> (<%=@chapter.number if hagahot?%>)
+
+ <% else %>
+   <p id="chapter_name_title"><%= t('items.chapter') -%> <%=@ind%> (<%=@chapter.name%> <%=@chapter.number if hagahot?%>)
+<% end %>
+
+
+</p>
+<% end %>
+</div>

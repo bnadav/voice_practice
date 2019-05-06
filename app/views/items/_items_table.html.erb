@@ -1,0 +1,23 @@
+<% if @chapter_items %>
+  <table class="table_wide" id="table" width=500>
+  <caption><%= render :partial => 'title' %></caption>
+  <% @chapter_items.each_with_index do |item,ind| %>
+    <tr id='tr_<%=ind%>' style="cursor:default"  onclick="toggle_visibility(<%=ind%>, <%=@chapter_items.size%>);"     >
+    <td  class="<%= raw cycle('odd_row','even_row') %>" colspan=11 align=center    >
+    <% if item.number > 0%>
+       <h3  ><%= t('items.quest_number') %> <%=item.number%>
+       </td>
+       </tr>
+    <% elsif item.number==0 %>
+       <h3><%= t('items.kernel') %></td></tr>
+     <% elsif item.number== -2 %>
+       <h3><%= t('items.essay') %></td></tr>
+    <% else %>
+       <h3><%= t('items.instructions') %> <%= t(item.text) -%></td></tr>
+    <% end %>
+    </h3></tr>
+    <%= render :partial => 'item', :locals => {:item => item, :ind => ind} %>
+  <% end %>
+  </table>
+<%end%>
+<br>

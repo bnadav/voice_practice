@@ -1,0 +1,35 @@
+<h1>עדכון פרק קיים</h1>
+
+<%= form_tag(chapters_examination_url , :method=> "put" ) do -%>
+ 
+  <% if @chapters_examination.errors.any? %>
+  <ul>
+    <% @chapters_examination.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+
+
+ <p>
+    משתתף בבחינה</br>
+    <%= select("chapters_examination", "examination_id", Examination.all.collect {|e| [ e.name, e.id ] }, { :include_blank => true }  ) %>
+
+   </p>
+
+   <p>
+    מספר סידורי בבחינה</br>
+    <%=text_field(:chapters_examination,:ind,:size=>3) %> 
+  
+   </p>
+
+
+
+  <p>
+      <%= submit_tag 'עדכן'  %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Back', chapters_examinations_path %>

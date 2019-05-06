@@ -1,0 +1,47 @@
+<h1>הגדרת שיבוץ חדש עבור פרק בבחינה</h1>
+
+<%= form_for(@chapters_examination) do |f| %>
+ <% if @chapters_examination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chapters_examination.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @chapters_examination.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>  
+
+
+ <p>
+    הפרקים המוגדרים במערכת</br>
+    <%= select("chapter", "id", Chapter.all.collect {|e| [ e.number, e.id ] }, { :include_blank => true }  ) %>
+
+   </p>
+   <p>
+    המבחנים המוגדרים במערכת</br>
+    <%= select("examination", "id", Examination.all.collect {|e| [ e.name, e.id ] }, { :include_blank => true }  ) %>
+
+   </p>
+
+   <p>
+    מספר סידורי בבחינה</br>
+   
+   
+  <div id="ind_result_div">  <%=text_field :chapters_examinations,:ind ,:size=>3 %></div> 
+  <script>
+   $("#examination_id").change(function(){$.get('/chapters_examinations/show_ind',{ examination_id: this.value}, function(html) { $("#ind_result_div").html(html); })});
+   </script>
+ 	       
+ 
+    
+   
+   </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', chapters_examinations_path %>

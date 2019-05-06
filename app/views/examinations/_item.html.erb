@@ -1,0 +1,15 @@
+<tr style="display:none" bgcolor=#fadefa id='<%=ind%>'>
+<% chapter_number=item.chapter.number %>
+<%=player_for( chapter_number, item.instructions,'הוראות', '#2AAAFF' )%>
+<%=player_for( chapter_number, item.text1, 'פסקה ראשונה', '#7FFF7F' )%>  
+<%=player_for( chapter_number, item.text2, 'פסקה שנייה', '#7FFF7F' )%>  
+<%=player_for( chapter_number, item.text3, 'פסקה שלישית', '#7FFF7F' )%>
+<%=player_for( chapter_number, item.text4, 'פסקה רביעית', '#7FFF7F' )%>
+<%=player_for( chapter_number, item.text5, 'פסקה חמישית', '#7FFF7F' )%>
+<%=player_for( chapter_number, item.question ,'שאלה' ,'#F9F085')%>
+<%=player_for( chapter_number, item.answer1, 'תשובה 1', '#ABD3C0' )%>
+<%=player_for( chapter_number, item.answer2, 'תשובה 2', '#ABD3C0' )%>
+<%=player_for( chapter_number, item.answer3, 'תשובה 3', '#ABD3C0' )%>
+<%=player_for( chapter_number, item.answer4, 'תשובה 4', '#ABD3C0' )%>
+</tr>
+

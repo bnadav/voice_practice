@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Chapters: <%= controller.action_name %></title>
+  <%= javascript_include_tag  "jquery.min", "jquery_ujs" %>
+  <%= csrf_meta_tag %>
+  <style>
+    body {
+      background-color: #cec9d0;
+	}
+  </style>
+</head>
+<body dir=rtl>
+<p style="color: green "><%= flash[:notice] %></p>
+<div dir=rtl>
+<h2>רשימת פריטים בפרק <%= @chapter.number%></h2>
+<table dir=rtl border=1 >
+
+
+<th>כיתוב על המקש</th><th>שם הקובץ המושמע</th><th>אינדקס</th><th>רק עבור בחינה אחרת</th>
+<% @chapter_items.each do |item| %>
+
+<tr>
+  
+
+  <td><%=item_label(item, "הוראות","קטע קריאה","שאלה ","מטלת חיבור")%></td>
+  <td dir=ltr><%=item.name%></td>
+
+  
+  <td><%=item.ind%> </td>
+  <td><%=item.examination? %> </td>
+ 
+  <td><%= link_to 'לערוך', edit_chapter_item_path(@chapter,item) %></td>
+  <td><%= link_to 'למחוק', chapter_item_url(@chapter,item), data:{ confirm: 'Are you sure?' }, :method => :delete %></td>
+   
+ 
+ </tr>
+<% end %>
+ 
+
+</table>
+<br>
+<%= link_to 'פריט חדש', new_chapter_item_path(@chapter.id) %></br>
+</br></br>
+<hr>
+
+
+<a href="/examinations/list">רשימת בחינות המוגדרות במערכת</a> </br> </br>
+<a href="/chapters/list">רשימת הפרקים המוגדרים במערכת</a></br> </br>
+<a href="/chapters_examinations">רשימת פרקים המשולבים בבחינות המוגדרים במערכת</a></br> </br>
+
+
+
+
+</div>
+</body>
+</html>

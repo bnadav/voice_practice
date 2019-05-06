@@ -1,0 +1,17 @@
+<body dir=rtl>
+<center>
+<% if !@chapter %>
+<h2>נא לבחור פרק ב<%=@examination.name%></h2>
+<% else %>
+<h2> פרק מס  <%=@chapter.ind%> ( <%=@chapter.name%> ) </h2>
+<% end %>
+<table width=400 dir=rtl >
+<tr>
+<% for chapter in @chapters %>
+<td>
+<%= link_to "<B>פרק מספר: " + chapter.ind.to_s, {:controller => :items, :action=>:index, :id=>chapter} %> </td>
+<% end %>
+</tr>
+</table>
+
+

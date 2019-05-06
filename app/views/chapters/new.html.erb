@@ -1,0 +1,52 @@
+﻿<div dir=rtl>
+<h1>הגדרת פרק חדש</h1>
+
+ 
+ <%= form_tag(chapters_url , :method=> "post" ) do -%>
+ 
+  <% if @chapter.errors.any? %>
+  <ul>
+    <% @chapter.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  
+
+  <p>
+    מספר פרק<br />
+    <%= text_field(:chapter,:number,:size => 10) %>
+  </p>
+
+   <p>
+    שם פרק<br />
+    <%= text_field(:chapter,:name) %>
+   </p>
+
+   <p>
+    נוסחאות עבור הפרק<br />
+    <%= select("chapter", "show_formulas",[["לא להציג",0],["להציג",1]], 
+                                { :include_blank => false }) %>
+   </p>
+
+    <p>
+    שפה<br />
+
+    <%= select("chapter", "lang", Chapter.find(:all).collect {|e| [ e.lang ] }.uniq ,
+                               { :include_blank => true }) %>
+   </p>
+
+  
+
+  <p>
+    <%= submit_tag 'לשמור'  %>
+  </p>
+<% end %>
+
+
+
+
+
+<%= link_to 'Back', list_chapters_path %>
+</div>

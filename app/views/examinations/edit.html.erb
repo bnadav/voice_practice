@@ -1,0 +1,45 @@
+<h1>Editing examination</h1>
+
+<%= form_for(@examination) do |f| %>
+   <% if @examination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@examination.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @examination.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+   <p> 
+    <%= f.label :number %>  <br />  
+	  צריך להיות 0 בבחינה שהיא תרגול  <br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  
+   <p>
+    <%= f.label :instruction %><br />
+    <%= f.text_field :instruction %>
+  </p>
+   <p>
+    <%= f.label :lang %><br />
+    <%= select("examination", "lang",[["עברית","hebrew"],["ערבית","arabic"] ] , 
+                         { :include_blank => false }) %>
+   </p>
+    <p>
+    <%= f.label :exam_type %><br />
+    <%= select("examination", "exam_type",[["פסיכומטרי","psycho"],["אמיר","amir"],["ידע עברית","yael"],["פרקי אנגלית","engchaps"]] , 
+                         { :include_blank => false }) %>
+   </p>
+  <p>
+       <%= submit_tag 'submit'  %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', list_examinations_path %>
