@@ -5,4 +5,4 @@ PUBLIC_DIR="#{Rails.root}/public"
 FILES_ROOT = "#{PUBLIC_DIR}/voice_data"
 
 FORMULAS_ROOT = "#{PUBLIC_DIR}/voice_data/formulas"
-FORMULAS_URI = "#{SERVER_URI}/voice_data/formulas"
+#FORMULAS_URI = "#{SERVER_URI}/voice_data/formulas"

@@ -1,0 +1,548 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+ body {
+      background-color: #cec9d0;
+	}
+body {
+   BACKGROUND-COLOR: #cec9d0;
+    FONT-SIZE: 18px;
+}
+
+body#body
+{  
+	height: 1000px;	
+	overflow-y: hidden;
+}
+.main
+{
+    FONT-FAMILY: 'Guttman Hatzvi';
+    FONT-SIZE: 22px;
+    font-color: silver
+}
+A
+{
+    COLOR: #000
+}
+A:visited
+{
+    COLOR: black
+}
+A:hover
+{
+    COLOR: purple
+}
+.PlayBtn
+{
+    BACKGROUND-IMAGE: url("play.bmp");
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    WIDTH: 25pt;
+    BACKGROUND-REPEAT: no-repeat;
+    HEIGHT: 25pt;
+    BORDER-TOP: medium none;
+    CURSOR: hand;
+    BORDER-RIGHT: medium none
+}
+.StopBtn
+{
+    BACKGROUND-IMAGE: url("stop_off.bmp");
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    WIDTH: 22pt;
+    BACKGROUND-REPEAT: no-repeat;
+    HEIGHT: 25pt;
+    BORDER-TOP: medium none;
+    CURSOR: hand;
+    BORDER-RIGHT: medium none
+}
+#Player
+{
+    BORDER-BOTTOM: fuchsia thick double;
+    BORDER-LEFT: fuchsia thick double;
+    MARGIN-TOP: 0pt;
+    WIDTH: 10pc;
+    DISPLAY: none;
+    HEIGHT: 10pc;
+    VISIBILITY: visible;
+    OVERFLOW: visible;
+    BORDER-TOP: fuchsia thick double;
+    BORDER-RIGHT: fuchsia thick double
+}
+.play {
+    BACKGROUND-IMAGE: url("play.bmp");
+}
+.stop_on {
+    BACKGROUND-IMAGE: url("stop_on.bmp");
+}
+.stop_off {
+    BACKGROUND-IMAGE: url("stop_off.bmp");
+}
+.pause {
+    BACKGROUND-IMAGE: url("pause.bmp");
+}
+.odd_row
+{
+    BACKGROUND-COLOR: #ffdab9
+}
+.even_row
+{
+    BACKGROUND-COLOR: #9c96aa
+}
+.table TR
+{
+    CURSOR: hand
+}
+#container
+{
+    Z-INDEX: 0;
+    position: relative;
+	margin: 0 auto;
+	overflow: auto;
+    HEIGHT: 63%; 
+	/*height: 850px;*/ 
+	/*height: 630px;*/
+	border: 1px solid black;
+}
+
+.math_formulas_narrow
+{
+    Z-INDEX: 0;
+    POSITION: absolute;
+    TEXT-ALIGN: center;
+    FONT-SIZE: 18px;
+    TOP: 4em;
+    RIGHT: 40em
+}
+.table_narrow
+{
+    BORDER: blanchedalmond 10px ridge;
+    POSITION: absolute;
+    TOP: 0em;
+    RIGHT: 15em;
+
+}
+.math_formulas_wide
+{
+    POSITION: absolute;
+    left: 5%;
+	TEXT-ALIGN: center;
+    FONT-SIZE: 18px;
+/*
+	display: block;
+*/
+  /*  RIGHT: 50em
+*/
+}
+.arab_formulas{
+    TEXT-ALIGN: right;
+}
+.table_wide
+{
+    border: blanchedalmond 10px ridge;
+	margin: 0 auto;
+	
+
+}
+.table DIV
+{
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bold
+     
+}
+
+#rate
+{
+    RIGHT: 20px
+}
+#rate CENTER
+{
+    MARGIN-TOP: 5px
+}
+
+#rate > h3
+{
+   text-align: center;
+}
+#zoom
+{
+    LEFT: 20px
+}
+#zoom CENTER
+{
+    MARGIN-TOP: 5px
+}
+#zoom > h3
+{
+   text-align: center;
+}
+#controls
+{
+    BORDER: black double;
+    POSITION: relative;
+    BACKGROUND-COLOR: #a69cb7;
+    HEIGHT: 10%;
+    WIDTH: 100%;
+    ZOOM: 100%;
+    TOP: 0%;
+    LEFT: 0px;
+   
+}
+#controls div
+{
+    POSITION: absolute;
+	TOP: 0px;
+}
+
+.link_to_exams
+{
+    border: black thin solid;;
+    BACKGROUND-COLOR: #ffdab9;
+    COLOR: black;
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bolder;
+    TEXT-DECORATION: none;
+	text-align: center;
+	display: block;
+	width: 340px;
+	margin: 0 auto;
+}
+.button_rate
+{
+    BORDER-BOTTOM: outset;
+    BORDER-LEFT: outset;
+    BORDER-TOP: outset;
+    BORDER-RIGHT: outset
+}
+.button_zoom
+{
+    BORDER-BOTTOM: outset;
+    BORDER-LEFT: outset;
+    BORDER-TOP: outset;
+    BORDER-RIGHT: outset
+}
+#inst
+{
+    BORDER-BOTTOM: green double;
+    BORDER-LEFT: green double;
+    PADDING-BOTTOM: 5ex;
+    LINE-HEIGHT: 30px;
+    BACKGROUND-COLOR: lightsteelblue;
+    PADDING-RIGHT: 5ex;
+    OVERFLOW: auto;
+    BORDER-TOP: green double;
+    BORDER-RIGHT: green double;
+    PADDING-TOP: 0ex
+}
+#chapter_name_title
+{
+    FONT-SIZE: 18pt
+}
+#link_to_exams_s
+{
+    COLOR: red;
+    FONT-SIZE: 20px
+}
+
+.zoom1 {
+  transform:scale(1);
+ -ms-transform:scale(1); /* IE 9 */
+ -webkit-transform:scale(1); /* Opera, Chrome, and Safari */
+}
+
+
+.zoom2 {
+transform:translate(0%, 25%) scale(1.5);
+ -ms-transform:translate(0%, 25%) scale(1.5); /* IE 9 */
+ -webkit-transform:translate(0%, 25%) scale(1.5); /* Opera, Chrome, and Safari */
+
+}
+
+
+.zoom3 {
+transform:translate(0%, 50%) scale(2); 
+/*transform:translate(-50%, 35%) scale(2); */
+ -ms-transform:translate(0%, 35%) scale(2); /* IE 9 */
+ -webkit-transform:translate(0%, 35%) scale(2); /* Opera, Chrome, and Safari */
+
+
+}
+
+.notice {
+   color: green;
+}
+
+html#chapters {
+  overflow: auto;
+}
+
+body {
+   BACKGROUND-COLOR: #cec9d0;
+    FONT-SIZE: 18px;
+}
+
+body#body
+{  
+	height: 1000px;	
+	overflow-y: hidden;
+}
+.main
+{
+    FONT-FAMILY: 'Guttman Hatzvi';
+    FONT-SIZE: 22px;
+    font-color: silver
+}
+A
+{
+    COLOR: #000
+}
+A:visited
+{
+    COLOR: black
+}
+A:hover
+{
+    COLOR: purple
+}
+.PlayBtn
+{
+    BACKGROUND-IMAGE: url(/images/play.bmp);
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    WIDTH: 25pt;
+    BACKGROUND-REPEAT: no-repeat;
+    HEIGHT: 25pt;
+    BORDER-TOP: medium none;
+    CURSOR: hand;
+    BORDER-RIGHT: medium none
+}
+.StopBtn
+{
+    BACKGROUND-IMAGE: url(/images/stop_off.bmp);
+    BORDER-BOTTOM: medium none;
+    BORDER-LEFT: medium none;
+    WIDTH: 22pt;
+    BACKGROUND-REPEAT: no-repeat;
+    HEIGHT: 25pt;
+    BORDER-TOP: medium none;
+    CURSOR: hand;
+    BORDER-RIGHT: medium none
+}
+#Player
+{
+    BORDER-BOTTOM: fuchsia thick double;
+    BORDER-LEFT: fuchsia thick double;
+    MARGIN-TOP: 0pt;
+    WIDTH: 10pc;
+    DISPLAY: none;
+    HEIGHT: 10pc;
+    VISIBILITY: visible;
+    OVERFLOW: visible;
+    BORDER-TOP: fuchsia thick double;
+    BORDER-RIGHT: fuchsia thick double
+}
+.odd_row
+{
+    BACKGROUND-COLOR: #ffdab9
+}
+.even_row
+{
+    BACKGROUND-COLOR: #9c96aa
+}
+.table TR
+{
+    CURSOR: hand
+}
+#container
+{
+    Z-INDEX: 0;
+    position: relative;
+	margin: 0 auto;
+	overflow: auto;
+    /*HEIGHT: 85%; */
+	height: 850px; 
+	border: 1px solid black;
+}
+
+.math_formulas_narrow
+{
+    Z-INDEX: 0;
+    POSITION: absolute;
+    TEXT-ALIGN: center;
+    FONT-SIZE: 18px;
+    TOP: 4em;
+    RIGHT: 40em
+}
+.table_narrow
+{
+    BORDER: blanchedalmond 10px ridge;
+    POSITION: absolute;
+    TOP: 0em;
+    RIGHT: 15em;
+
+}
+.math_formulas_wide
+{
+    POSITION: absolute;
+    left: 5%;
+	TEXT-ALIGN: center;
+    FONT-SIZE: 18px;
+/*
+	display: block;
+*/
+  /*  RIGHT: 50em
+*/
+}
+.arab_formulas{
+    TEXT-ALIGN: right;
+}
+.table_wide
+{
+    border: blanchedalmond 10px ridge;
+	margin: 0 auto;
+	
+
+}
+.table DIV
+{
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bold
+     
+}
+
+#rate
+{
+    RIGHT: 20px
+}
+#rate CENTER
+{
+    MARGIN-TOP: 5px
+}
+
+#rate > h3
+{
+   text-align: center;
+}
+#zoom
+{
+    LEFT: 20px
+}
+#zoom CENTER
+{
+    MARGIN-TOP: 5px
+}
+#zoom > h3
+{
+   text-align: center;
+}
+#controls
+{
+    BORDER: black double;
+    POSITION: relative;
+    BACKGROUND-COLOR: #a69cb7;
+    HEIGHT: 10%;
+    WIDTH: 100%;
+    ZOOM: 100%;
+    TOP: 0%;
+    LEFT: 0px;
+   
+}
+#controls div
+{
+    POSITION: absolute;
+	TOP: 0px;
+}
+
+#link_to_exams
+{
+    border: black thin solid;;
+    BACKGROUND-COLOR: #ffdab9;
+    COLOR: black;
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bolder;
+    TEXT-DECORATION: none;
+	text-align: center;
+	display: block;
+	width: 340px;
+	margin: 0 auto;
+}
+.button_rate
+{
+    BORDER-BOTTOM: outset;
+    BORDER-LEFT: outset;
+    BORDER-TOP: outset;
+    BORDER-RIGHT: outset
+}
+.button_zoom
+{
+    BORDER-BOTTOM: outset;
+    BORDER-LEFT: outset;
+    BORDER-TOP: outset;
+    BORDER-RIGHT: outset
+}
+#inst
+{
+    BORDER-BOTTOM: green double;
+    BORDER-LEFT: green double;
+    PADDING-BOTTOM: 5ex;
+    LINE-HEIGHT: 30px;
+    BACKGROUND-COLOR: lightsteelblue;
+    PADDING-RIGHT: 5ex;
+    OVERFLOW: auto;
+    BORDER-TOP: green double;
+    BORDER-RIGHT: green double;
+    PADDING-TOP: 0ex
+}
+#chapter_name_title
+{
+    FONT-SIZE: 18pt
+}
+#link_to_exams_s
+{
+    COLOR: red;
+    FONT-SIZE: 20px
+}
+
+.zoom1 {
+  transform:scale(1);
+ -ms-transform:scale(1); /* IE 9 */
+ -webkit-transform:scale(1); /* Opera, Chrome, and Safari */
+}
+
+
+.zoom2 {
+transform:translate(0%, 25%) scale(1.5);
+ -ms-transform:translate(0%, 25%) scale(1.5); /* IE 9 */
+ -webkit-transform:translate(0%, 25%) scale(1.5); /* Opera, Chrome, and Safari */
+
+}
+
+
+.zoom3 {
+transform:translate(0%, 50%) scale(2); 
+/*transform:translate(-50%, 35%) scale(2); */
+ -ms-transform:translate(0%, 35%) scale(2); /* IE 9 */
+ -webkit-transform:translate(0%, 35%) scale(2); /* Opera, Chrome, and Safari */
+
+
+}
+
+.notice {
+   color: green;
+}
+
+html#chapters {
+  overflow: auto;
+}
+

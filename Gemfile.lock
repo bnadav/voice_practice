@@ -84,6 +84,8 @@ GEM
     thread_safe (0.3.4)
     tilt (1.4.1)
     tzinfo (0.3.42)
+    uglifier (4.1.20)
+      execjs (>= 0.3.0, < 3)
 
 PLATFORMS
   ruby
@@ -95,6 +97,7 @@ DEPENDENCIES
   rails (~> 4.0.0)
   sass-rails (~> 4.0.4)
   sqlite3
+  uglifier (>= 2.5.3)
 
 BUNDLED WITH
    1.16.1
