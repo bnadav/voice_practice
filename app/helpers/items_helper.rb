@@ -113,8 +113,8 @@ def  play_all(chapter, number,item ,title='stam', color='wheat' )
    end
    str=''
    if item.question and !item.question.empty?
-      #file_url = "#{URI_ROOT}/#{chapter}/asx/#{item.question}.asx"
-      file_url = "#{URI_ROOT}/#{chapter}/#{item.question}"
+      #file_url = "#{uri_root}/#{chapter}/asx/#{item.question}.asx"
+      file_url = "#{uri_root}/#{chapter}/#{item.question}"
       label = title + '<br>'
       str +='<td style="cursor: default;" align=center ; bgcolor=' + color  + '> ' +label
       str +='<INPUT  TYPE="BUTTON" id="'+number+'_2" class="StopBtn"   onclick=ClusterStop("'+number+'")>'
@@ -124,8 +124,8 @@ def  play_all(chapter, number,item ,title='stam', color='wheat' )
    elsif item.text and !item.text.empty?
 
      
-      #file_url = "#{URI_ROOT}/#{chapter}/asx/#{item.text}.asx"
-      file_url = "#{URI_ROOT}/#{chapter}/#{item.text}"
+      #file_url = "#{uri_root}/#{chapter}/asx/#{item.text}.asx"
+      file_url = "#{uri_root}/#{chapter}/#{item.text}"
       file_name = "#{FILES_ROOT}/#{chapter}/#{item.text}"
       max_paragraphs = check_max_paragraphs(file_name); 
  
@@ -149,7 +149,8 @@ def  play_all(chapter, number,item ,title='stam', color='wheat' )
      s=''
      label = title
      name = "#{FORMULAS_ROOT}/#{filename}"
-     file_uri = "#{FORMULAS_URI}/#{filename}"
+     file_uri = "#{uri_root}/formulas/#{filename}"
+     #file_uri = "#{FORMULAS_URI}/#{filename}"
    if File.exist?( name)
 
           

@@ -16,8 +16,6 @@ class ApplicationController < ActionController::Base
 end
 
 class ApplicationController < ActionController::Base
-
-
  def admin?
      head(403) # not permited
  end
